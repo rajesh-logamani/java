@@ -1,4 +1,4 @@
-package concepts.interfaces;
+package interfaces;
 
 public class C implements I {
     @Override

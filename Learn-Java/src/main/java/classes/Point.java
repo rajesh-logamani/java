@@ -1,4 +1,4 @@
-package concepts.classes.definition;
+package classes;
 
 public class Point {
     int x;

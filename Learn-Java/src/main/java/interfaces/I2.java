@@ -1,4 +1,4 @@
-package concepts.interfaces;
+package interfaces;
 
 public interface I2 {
     public void fun2();
