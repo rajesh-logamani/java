@@ -1,0 +1,46 @@
+Synchronization Notes:
+
+Problem Situation:
+1. Critical sections in multi-threaded applications can lead to
+2.  Race conditions, deadlocks, and inconsistent data if not managed properly.
+3. Pre-emptive in thread scheduling can cause threads to be interrupted at any time (because of context switching),
+
+Solution to handle synchronization:
+1. Removing Race Conditions:
+   - Use locks (mutexes) to ensure that only one thread can access a shared resource at a time.
+   - Use atomic variables for simple operations that need to be thread-safe without locks.
+2. Synchronized blocks and methods:
+   - Use synchronized blocks to ensure that only one thread can execute a block of code at a time.
+   - Use synchronized methods to ensure that only one thread can execute a method at a time.
+
+Scenarios:
+// 1. Two threads incrementing a shared counter.
+// 2. A thread waiting for a condition to be met before proceeding.
+// 3. A thread releasing a lock after completing its task.
+// 4. A thread acquiring a lock before accessing a shared resource.
+// 5. A thread signaling another thread to wake up after a condition changes.
+// 6. A thread using a semaphore to limit access to a resource.
+// 7. A thread using a read-write lock to allow multiple readers or a single writer.
+// 8. A thread using a barrier to synchronize multiple threads at a certain point.
+// 9. A thread using a countdown latch to wait for multiple threads to complete before proceeding.
+// 10. A thread using a future to get the result of an asynchronous computation.
+// 11. A thread using a thread pool to manage multiple threads efficiently.
+// 12. A thread using a lock to ensure mutual exclusion when accessing a shared resource.
+// 13. A thread using a condition variable to wait for a specific condition to be met.
+// 14. A thread using a mutex to protect shared data from concurrent access.
+// 15. A thread using a spinlock to repeatedly check for a condition before proceeding.
+// 16. A thread using a reentrant lock to allow a thread to acquire the same lock multiple times.
+// 17. A thread using a read lock to allow multiple threads to read a shared resource concurrently.
+// 18. A thread using a write lock to ensure exclusive access to a shared resource for writing.
+// 19. A thread using a fair lock to ensure that threads acquire the lock in the order they requested it.
+// 20. A thread using a non-fair lock to allow threads to acquire the lock without strict ordering.
+// 21. A thread using a condition to signal other threads when a resource becomes available.
+// 22. A thread using a lock to protect a critical section of code from concurrent access.
+// 23. A thread using a synchronized block to ensure that only one thread can execute a block of code at a time.
+// 24. A thread using a synchronized method to ensure that only one thread can execute a method at a time.
+// 25. A thread using a volatile variable to ensure visibility of changes across threads.
+// 26. A thread using an atomic variable to perform lock-free operations on shared data.
+// 27. A thread using a thread-safe collection to manage shared data without explicit locking.
+// 28. A thread using a concurrent queue to allow multiple threads to add and remove elements safely.
+// 29. A thread using a concurrent map to allow multiple threads to access and modify key-value pairs safely.
+// 30. A thread using a concurrent set to allow multiple threads to add and remove elements safely.
