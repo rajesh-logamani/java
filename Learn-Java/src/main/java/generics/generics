@@ -1,0 +1,84 @@
+Java Generics - Quick Class Notes
+
+1. Problems Without Generics (Before Java 5)
+- Type safety is not guaranteed.
+- Requires explicit casting, which can lead to runtime errors.
+
+Example:
+List list = new ArrayList();
+list.add("Hello");
+String s = (String) list.get(0); // OK
+list.add(10);                    // Allowed at compile time!
+String str = (String) list.get(1); // Runtime error (ClassCastException)
+
+
+2. Why We Need Generics
+- Compile-time type safety
+- Eliminates casting
+- Code reusability
+
+Example:
+List<String> list = new ArrayList<>();
+list.add("Java");
+// list.add(10); // Compile-time error
+String s = list.get(0); // No casting needed
+
+
+3. Java Before Generics to Manage Different Types
+Used Object as a common type:
+
+public class Box {
+    private Object obj;
+
+    public void set(Object obj) { this.obj = obj; }
+    public Object get() { return obj; }
+}
+
+Problem: You need to cast when retrieving:
+
+Box box = new Box();
+box.set("Text");
+String str = (String) box.get(); // Risky
+
+
+4. Generics with 'extends' (Bounded Types)
+- Restricts type to subclasses of a class (or interface)
+
+class Box<T extends Number> {
+    T value;
+    void show() {
+        System.out.println(value.doubleValue());
+    }
+}
+
+Box<Integer> b1 = new Box<>();
+// Box<String> b2 = new Box<>(); // Compile-time error
+
+
+5. Difference Between T and ?
+Feature           | T (Type Parameter)        | ? (Wildcard)
+------------------|---------------------------|-------------------------------
+Definition        | Declares a generic type   | Unknown type
+Use               | In class/method declaration | In method parameters (read-only)
+Read/Write        | Can read/write            | Can only read (write is limited)
+
+Example using T:
+class Printer<T> {
+    void print(T t) {
+        System.out.println(t);
+    }
+}
+
+Example using ?:
+public void printList(List<?> list) {
+    for (Object obj : list) {
+        System.out.println(obj);
+    }
+    // list.add("Test"); // Not allowed
+}
+
+
+✅ Key Takeaways
+- Use generics to write safer, cleaner code.
+- Prefer T when you define a generic class/method.
+- Use ? when you only need to read from a collection.

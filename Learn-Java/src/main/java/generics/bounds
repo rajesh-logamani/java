@@ -1,0 +1,40 @@
+Bound vs Unbound
+**********************************
+
+Unbounded Generics
+Unbounded generics allow any type to be used as a generic parameter.
+class Box<T> {
+    T value;
+    void set(T value) { this.value = value; }
+    T get() { return value; }
+}
+
+**********************************
+
+
+Bounded Generics
+Bounded generics restrict the types that can be used as type parameters.
+
+class Box<T extends Number> {
+    T value;
+    void set(T value) { this.value = value; }
+    T get() { return value; }
+}
+
+**********************************
+
+Lower Bound vs Upper Bound
+**********************************
+
+ Lower Bound (super) – restrict to a specific type or its superclasses
+ public void addNumbers(List<? super Integer> list) {
+     list.add(10); // Allowed
+ }
+**********************************
+Upper Bound (extends) – restrict to a specific type or its subclasses
+
+class Box<T extends Number> {
+    T value;
+    void set(T value) { this.value = value; }
+    T get() { return value; }
+}
