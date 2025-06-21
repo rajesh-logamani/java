@@ -1,0 +1,19 @@
+Thread Safety:
+ArrayList, Linked List => Non Thread Safety
+Vector => Thread Safety (But it became legacy, because of performance)
+Stack => Same as Vector (We can use ArrayList, Linked List instead which gives you almost everything)
+
+
+Diff between ArrayList and Vector (Only diff is thread safety)
+
+
+
+
+
+
+Maps:
+    1. HashMap (No order) - O[1]
+
+    2. TreeMap (Sorted order) - O[long N]
+
+    3. LinkedHashMap (More Insertion & Deletion) - O[1]
