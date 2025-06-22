@@ -1,0 +1,26 @@
+Comparable (Natural Ordering)
+******************************
+Interface: java.lang.Comparable<T>
+
+Purpose: Used to define the default (natural) sorting order of objects of a class.
+Method: int compareTo(T o)
+Modification: You have to modify the class whose objects need to be sorted.
+
+************************************************************************************************************************
+Comparator (Custom Ordering)
+*******************************
+Interface: java.util.Comparator<T>
+Purpose: Used to define multiple or custom sorting logic outside the class.
+Method: int compare(T o1, T o2)
+Modification: No need to modify the class.
+************************************************************************************************************************
+
+| Feature        | Comparable              | Comparator                            |
+| -------------- | ----------------------- | ------------------------------------- |
+| Package        | `java.lang`             | `java.util`                           |
+| Method         | `compareTo(Object o)`   | `compare(Object o1, Object o2)`       |
+| Sorting logic  | In the class itself     | Outside the class                     |
+| Modifies class | Yes                     | No                                    |
+| Use case       | Natural/default sorting | Custom or multiple sorting strategies |
+
+

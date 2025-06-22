@@ -1,6 +1,6 @@
-package collections.comparators;
+package collections.comparision;
 
-import collections.labSession.Item.Item;
+import collections.comparision.Item;
 
 import java.util.Comparator;
 
@@ -16,3 +16,16 @@ public class QuantityComparator implements Comparator<Item> {
         }
     }
 }
+
+/**
+ *  Ascending
+ *  if(o1<o2) return 1;
+ *  if(o1>o2) return -1;
+ *  if(o1 == o2) return 0;
+ *
+ *  Descending
+ *  if(o1<o2) return -1;
+ *  if(o1>o2) return 1;
+ *  if(o1 == o2) return 0;
+ *
+ */
