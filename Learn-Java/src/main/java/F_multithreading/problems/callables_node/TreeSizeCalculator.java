@@ -20,7 +20,7 @@ public class TreeSizeCalculator implements Callable<Integer> {
 
     private Integer calculateSize(Node node, ExecutorService executorService) throws Exception {
         if (node == null) {
-            return null;
+            return 0;
         }
         TreeSizeCalculator leftNode = new TreeSizeCalculator(root.left,executorService);
         Future<Integer> futureLeft = executorService.submit(leftNode);
@@ -29,8 +29,8 @@ public class TreeSizeCalculator implements Callable<Integer> {
         Future<Integer> futureRight = executorService.submit(rightNode);
 
         // Wait for the results of the left and right subtree calculations
-        Integer leftSize = futureLeft.get() == null ? 0 : futureLeft.get();
-        Integer rightSize = futureRight.get() == null ? 0 : futureRight.get();
+        Integer leftSize = futureLeft.get();
+        Integer rightSize = futureRight.get();
 
         return 1 + leftSize + rightSize;
     }
