@@ -7,7 +7,7 @@ public class Value {
         this.value = offset;
     }
 
-    public synchronized int getValue() {
+    public int getValue() {
         return value;
     }
 
@@ -15,7 +15,7 @@ public class Value {
         this.value += delta;
     }
 
-    public synchronized void setValue(int value) {
-        this.value = value;
-    }
+//    public synchronized void setValue(int value) {
+//        this.value = value;
+//    }
 }
