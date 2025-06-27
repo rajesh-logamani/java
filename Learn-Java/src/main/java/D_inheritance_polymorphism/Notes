@@ -1,0 +1,9 @@
+Inheritance.java
+****************
+Java does not support multiple inheritance, so if a class is declared, since Java does not know which class to inherit from.
+// If a class is declared as final, it cannot be extended by any other class.
+
+
+Data members
+***************
+Interface members are implicitly public, static, and final. because they are constants.

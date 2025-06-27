@@ -1,4 +1,4 @@
-package D_inheritance_polymorphism.interfaces;
+package E_abstractions_Interfaces.interfaces;
 
 public class C implements I {
     @Override
