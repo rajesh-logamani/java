@@ -1,0 +1,89 @@
+Multithreading Notes
+***********************
+Methods for Multithreading in Java
+1. Thread Class
+   - The Thread class is used to create and manage threads in Java.
+   - It provides methods to start, pause, resume, and stop threads.
+   - You can extend the Thread class to create a custom thread by overriding its run() method.
+   - (important) Thread.join() method is used to wait for a thread to finish its execution.
+
+2. Runnable Interface
+    - The Runnable interface is used to define a task that can be executed by a thread.
+    - You can implement the Runnable interface and pass it to a Thread object to create a thread.
+    - This approach allows for better separation of concerns and is more flexible than extending the Thread class.
+
+3. Callable Interface
+    - The Callable interface is similar to Runnable but can return a result and throw exceptions.
+    - It is used when you need to perform a task that returns a value or may throw an exception.
+    - You can use the Future interface to retrieve the result of a Callable task after it has been executed.
+
+4. Executor Framework
+    - The Executor framework provides a higher-level abstraction for managing threads.
+    - It allows you to create thread pools, which can manage a fixed number of threads and reuse them for executing tasks.
+    - The ExecutorService interface provides methods to submit tasks for execution and manage the lifecycle of the thread pool.
+     (important) -  // executorService.submit() submits the Callable task for execution and returns a Future object.
+                            // executorService.execute() is used to execute a Runnable task without returning a result.
+
+Thread thread = new Thread(new Runnable() {
+    @Override
+    public void run() {
+        // Code to be executed by the thread
+        System.out.println("Thread is running");
+    }
+});
+
+// Starting the thread
+thread.start();
+// The thread will execute the run() method defined in the Runnable interface.
+******************************************************************************************************************************
+Executor Services:
+*****************
+// The Executor framework provides a way to manage threads and tasks in a more efficient manner.
+
+ExecutorService executorService = Executors.newFixedThreadPool(5); // Create a thread pool with a fixed number of threads
+ExecutorService executorServiceCached = Executors.newCachedThreadPool(); // Create a thread pool that can create new threads as needed
+
+// Submitting tasks to the executor service
+executorService.submit(new Runnable() {
+                       @Override
+                       public void run() {
+                           // Code to be executed by the thread
+                           System.out.println("Thread is running");
+                       }
+                   });
+ submit method is used to submit a task for execution in the executor service.
+
+ **********************************************************************************************************************************
+
+Usage of Callable Interface:
+******************************
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+
+public class CallableExample {
+    public static void main(String[] args) {
+        ExecutorService executorService = Executors.newFixedThreadPool(2);
+
+        Callable<Integer> task = new Callable<Integer>() {
+            @Override
+            public Integer call() throws Exception {
+                // Simulating a task that returns a result
+                return 42; // Example result
+            }
+        };
+
+        Future<Integer> future = executorService.submit(task);
+
+        try {
+            Integer result = future.get(); // Retrieve the result of the Callable task
+            System.out.println("Result from Callable: " + result);
+        } catch (InterruptedException | ExecutionException e) {
+            e.printStackTrace();
+        } finally {
+            executorService.shutdown(); // Shutdown the executor service
+        }
+    }
+}

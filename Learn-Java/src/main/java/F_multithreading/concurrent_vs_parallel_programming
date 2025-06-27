@@ -1,0 +1,19 @@
+
+Process in system programming
+// Process is a program in execution, which includes the program code and its current activity.
+    A process has its own memory space and system resources.
+
+ // Single vs Concurrent vs Parallel Programming
+ Single programming
+ ********************
+ // Single programming means only one process is in execution at a time.
+
+Concurrent programming
+************************
+ // Concurrent programming means more than one process is in execution at the same time, but only one of them might be making progress.
+ // Concurrent programming requires time-bound CPU scheduling
+
+Parallel programming
+*********************
+ // Parallel programming means more than one process is in execution as well as making progress at the same time.
+ // Parallel programming requires multiple program counters
