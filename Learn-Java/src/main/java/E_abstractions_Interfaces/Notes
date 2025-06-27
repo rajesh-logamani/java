@@ -1,0 +1,7 @@
+A class implementing two interfaces should not have an interface with,
+    Same name with different return type
+
+You can have,
+// 1. Same name with same return type
+// 2. Different name with different return type
+

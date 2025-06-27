@@ -13,7 +13,7 @@ public class runnableThread implements Runnable {
         System.out.println(number + " is running in thread: " + Thread.currentThread().getName());
     }
 
-    // Main method to test the runnableThread class
+    // AbstractClassImplementsInterface method to test the runnableThread class
     public static void main(String[] args) {
 //         Create and start 50 threads
         for (int i = 0; i < 50; i++) {

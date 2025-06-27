@@ -16,7 +16,7 @@ public class executors implements Runnable {
         System.out.println(number + " is running in thread: " + Thread.currentThread().getName());
     }
 
-    // Main method to test the runnableThread class
+    // AbstractClassImplementsInterface method to test the runnableThread class
     public static void main(String[] args) {
         //Use thread executor to manage threads
 //        ExecutorService executor = Executors.newFixedThreadPool(5);
