@@ -1,4 +1,4 @@
-package interfaces;
+package D_inheritance_polymorphism.interfaces;
 
 public interface I2 {
     public void fun2();
