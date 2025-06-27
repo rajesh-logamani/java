@@ -1,4 +1,4 @@
-package classes;
+package A_classes;
 
 public class Rectangle {
 
@@ -8,9 +8,10 @@ public class Rectangle {
 
     // Default constructor
     public Rectangle() {
-        this.topLeft = new Point();
-        this.height = 0;
-        this.width = 0;
+//        this.topLeft = new Point();
+//        this.height = 0;
+//        this.width = 0;
+        this(new Point(), 0, 0); // Using parameterized constructor to avoid code duplication
     }
     // Parameterized constructor
     public Rectangle(Point topLeft, int height, int width) {

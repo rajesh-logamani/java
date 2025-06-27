@@ -1,4 +1,4 @@
-package classes;
+package A_classes;
 
 public class Point {
     int x;

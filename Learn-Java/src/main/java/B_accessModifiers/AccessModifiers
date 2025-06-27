@@ -1,0 +1,12 @@
+Access modifiers/AccessSpecifiers.java
+******************
+In Java (and many other object-oriented languages),
+access modifiers and access specifiers control the visibility or access level of classes, methods, and variables.
+
+// There are four access specifiers in Java:
+// 1. public: The member is accessible from any other class.
+// 2. protected: The member is accessible within its own package and by subclasses.
+// 3. default (no modifier): The member is accessible only within its own package.
+// 4. private: The member is accessible only within its own class.
+
+
