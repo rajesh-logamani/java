@@ -1,6 +1,6 @@
-package collections.labSession.Inventory;
+package H_collections.labSession.Inventory;
 
-import collections.labSession.Item.Item;
+import H_collections.labSession.Item.Item;
 
 import java.util.ArrayList;
 import java.util.HashMap;

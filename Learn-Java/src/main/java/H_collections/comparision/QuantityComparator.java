@@ -1,6 +1,4 @@
-package collections.comparision;
-
-import collections.comparision.Item;
+package H_collections.comparision;
 
 import java.util.Comparator;
 

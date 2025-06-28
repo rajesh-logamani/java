@@ -1,4 +1,4 @@
-package collections.comparision;
+package H_collections.labSession.Item;
 
 public class Item implements Comparable<Item> {
     private  String id;
@@ -11,7 +11,7 @@ public class Item implements Comparable<Item> {
 
     }
 
-    public Item(String id, String name, double price, long quantity, int serving){
+    public  Item(String id, String name, double price, long quantity, int serving){
         this.id = id;
         this.name = name;
         this.price = price;

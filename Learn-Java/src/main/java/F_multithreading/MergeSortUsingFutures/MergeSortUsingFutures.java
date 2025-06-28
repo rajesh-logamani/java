@@ -59,6 +59,7 @@ public class MergeSortUsingFutures implements Callable<ArrayList<Integer>> {
     }
 
     public static void main(String[] args) {
+//        ArrayList<Integer> list = new ArrayList<>(List.of(10, 8, 7, 9, 1, 5));
         ArrayList<Integer> list = new ArrayList<>();
         for (int i = 0; i < 20; i++) {
             list.add((int) (Math.random() * 1000));

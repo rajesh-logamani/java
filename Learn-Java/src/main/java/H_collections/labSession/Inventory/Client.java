@@ -1,13 +1,12 @@
-package collections.labSession.Inventory;
+package H_collections.labSession.Inventory;
 
-import collections.labSession.Item.Book;
-import collections.labSession.Item.Electronics;
-import collections.labSession.Item.Order;
-import collections.labSession.Item.RecentlyViewedItem;
+import H_collections.labSession.Item.Book;
+import H_collections.labSession.Item.Electronics;
+import H_collections.labSession.Item.Order;
+import H_collections.labSession.Item.RecentlyViewedItem;
 
 import java.util.LinkedList;
 import java.util.List;
-import java.util.PriorityQueue;
 
 public class Client {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package collections.labSession.Item;
+package H_collections.labSession.Item;
 
 public class Electronics extends Item{
     public int warranty;

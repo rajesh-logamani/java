@@ -1,4 +1,4 @@
-package collections.labSession.Item;
+package H_collections.labSession.Item;
 
 public class Clothing extends Item {
     public String size;

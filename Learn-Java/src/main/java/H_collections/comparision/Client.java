@@ -1,6 +1,5 @@
-package collections.comparision;
+package H_collections.comparision;
 
-import java.awt.event.ItemListener;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;

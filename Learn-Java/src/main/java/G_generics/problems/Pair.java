@@ -1,4 +1,4 @@
-package generics.problems;
+package G_generics.problems;
 
 public class Pair<K,V> {
     private K first;
