@@ -1,0 +1,49 @@
+static List<Integer> getOdd(Stream<Integer> stream){
+    // write code here
+    return stream.filter(x -> x % 2 == 1).collect(Collectors.toList());
+}
+------------------------------------------------------------------------------------
+static boolean areAllEven(Stream<Integer> stream){
+    int oddCount = stream.filter(x -> x % 2 == 1).toArray().length;
+    return oddCount == 0;
+    (or)
+    long count = words.stream()
+                    .filter(w -> w.length() > 5)
+                    .count();
+}
+---------------------------------------------------------------------------------
+public static List<String> filterFruitsStartingWithA(List<String> fruits) {
+    return fruits.stream().filter(x -> x.startsWith("A", 0)).collect(Collectors.toList());
+}
+---------------------------------------------------------------------------------
+public static List<Integer> getDistinctNumbers(List<Integer> numbers) {
+    return numbers.stream().distinct().collect(Collectors.toList());
+}
+-----------------------------------------------------------------------------------------
+public static List<String> sortAnimalsByLengthDescending(List<String> animals) {
+    return animals.stream()
+            //add your code here
+            .sorted((a,b) -> b.length() - a.length())
+            .collect(Collectors.toList());
+}
+-----------------------------------------------------------------------------------------------------
+int sum = numbers.stream()
+                .map(n -> n * n)
+                .reduce(0, Integer::sum);
+ -----------------------------------------------------------------------------------------------------
+ boolean anyMatch = words.stream()
+                 .anyMatch(w -> w.startsWith("b"));
+-----------------------------------------------------------------------------------------------------
+(important)
+return sentences.stream()
+        .filter(x -> !x.contains("Java"))
+        .flatMap(sentence -> Arrays.stream(sentence.split("\\s+", 0)))
+        .distinct()
+        .count();
+-----------------------------------------------------------------------------------------------------
+(important)
+double result = Math.floor(sentences.stream().filter(x -> x.contains("Java"))
+        .map(x -> x.length())
+        .mapToInt(Integer::intValue)
+        .average().orElse(0.0));
+-----------------------------------------------------------------------------------------------------
