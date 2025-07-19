@@ -33,13 +33,13 @@ public class executors implements Runnable {
 //        executorCached.shutdown();
 
         // try with resources to automatically close the executor
-        try (ExecutorService executor = Executors.newCachedThreadPool()) {
+        ExecutorService executor = Executors.newCachedThreadPool();
+        try {
             for (int i = 0; i < 50; i++) {
                 executor.execute(new executors(i));
             }
-        } // The executor will be automatically shut down here
-        catch (Exception e) {
-            e.printStackTrace(); // Handle any exceptions that may occur
+        } finally {
+            executor.shutdown();
         }
 
     }

@@ -1,0 +1,53 @@
+Singleton
+***********
+
+private static instance // static instance variable to not let other classes access
+private constructor // To stop other classes to create new object
+public getInstance // to get the instance
+
+Options to create Singleton instance
+1.  public static getInstance(){
+	if(instance ==null){
+		instance = new Instance();
+	}
+	return instance;
+}
+problem:
+	instance == null check is required only until the instance is created.
+	in multithreaded env, multiple thread can get instance == null and will be able to create new instance.
+
+
+
+2. public static instance = new Instance();
+
+public static getInstance(){
+	return instance;
+}
+problem:
+only one instance is created initially. But It will take come time initially as the object is created initially.
+
+
+3. Locking / synchronization
+public static getInstance(){
+	lock.lock();
+		if(instance ==null){
+			instance = new Instance();
+		}
+	lock.unlock();
+	return instance;
+}
+problem: We need this lock to be in place only until the instance is created initially. Having lock always reduces the performance of all the request
+
+
+
+4. Double check locking
+if(instance == null){
+	lock.lock();
+	if(instance ==null){  // Only the initial threads can come here
+		instance = new Instance();
+	}
+	lock.unlock();
+}
+return instance;
+
+This solves the all above problems as the second level instance == null validation only for the initial threads that gets entered into the first instance check.
