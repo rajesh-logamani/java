@@ -1,0 +1,81 @@
+Why Need Builder
+****************
+
+The Builder pattern is used to construct complex objects step by step.
+It allows for more control over the construction process and can lead to more readable code.
+
+Traditionally, constructors can become unwieldy when an object has many parameters, especially if some are optional or have default values.
+This can lead to a situation where the constructor has many parameters, making it difficult to read and maintain.
+The Builder pattern addresses this by separating the construction of a complex object from its representation.
+
+Consider a scenario where you have a class that requires multiple parameters to be passed to its constructor.
+For example, consider a class `Car` that has many attributes such as `color`, `engineType`, `numberOfDoors`, etc.
+```java
+public class Car {
+    private String color;
+    private String engineType;
+    private int numberOfDoors;
+
+    public Car(String color, String engineType, int numberOfDoors) {
+        this.color = color;
+        this.engineType = engineType;
+        this.numberOfDoors = numberOfDoors;
+    }
+}
+// Usage
+Car car = new Car("Red", "V8", 4);
+```
+As the number of parameters increases, the constructor becomes harder to read and maintain.
+This can lead to confusion, especially if the parameters are of the same type or if some parameters are optional.
+This can also lead to issues with immutability, as the object may need to be modified after construction, which is not ideal in many cases.
+This is where the Builder pattern comes into play.
+
+The Builder pattern allows you to create a `Car` object step by step, making it easier to read and maintain.
+```java
+public class Car {
+    private String color;
+    private String engineType;
+    private int numberOfDoors;
+
+    private Car(Builder builder) {
+        this.color = builder.color;
+        this.engineType = builder.engineType;
+        this.numberOfDoors = builder.numberOfDoors;
+    }
+
+    public static class Builder {
+        private String color;
+        private String engineType;
+        private int numberOfDoors;
+
+        public Builder setColor(String color) {
+            this.color = color;
+            return this;
+        }
+
+        public Builder setEngineType(String engineType) {
+            this.engineType = engineType;
+            return this;
+        }
+
+        public Builder setNumberOfDoors(int numberOfDoors) {
+            this.numberOfDoors = numberOfDoors;
+            return this;
+        }
+
+        public Car build() {
+            return new Car(this);
+        }
+    }
+}
+// Usage
+Car car = new Car.Builder()
+                .setColor("Red")
+                .setEngineType("V8")
+                .setNumberOfDoors(4)
+                .build();
+This approach allows for a more readable and maintainable code structure, as each step of the construction process is clearly defined.
+Additionally, it allows for optional parameters to be easily handled without cluttering the constructor.
+This pattern also helps in creating immutable objects, as the `Car` object can be constructed in a way that it cannot be modified after creation, ensuring thread safety and consistency.
+In summary, the Builder pattern is a solution to the problem of complex object construction.
+It provides a way to construct objects step by step, improving readability and maintainability.
